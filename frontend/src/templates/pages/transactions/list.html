@@ -1,0 +1,75 @@
+<div class="expense-list">
+    <div class="content-header mb-4-5">
+        <h1 class="title">Доходы и расходы</h1>
+    </div>
+    <div class="mb-4-5 d-flex">
+        <a href="/transactions/create" class="btn btn-custom btn-success">Создать доход</a>
+        <a href="/transactions/create" class="btn btn-custom btn-danger">Создать расход</a>
+    </div>
+
+    <section class="content">
+        <div class="container-fluid g-0">
+            <div class="tab d-flex align-items-center justify-content-between flex-wrap mb-4-5">
+                <div class="btn-group" role="group" aria-label="Фильтр периода">
+                    <div class="d-flex  filter-group">
+                        <button type="button" class="btn btn-outline-secondary filter-button">Сегодня</button>
+                        <button type="button" class="btn btn-outline-secondary filter-button">Неделя</button>
+                        <button type="button" class="btn btn-outline-secondary filter-button">Месяц</button>
+                        <button type="button" class="btn btn-outline-secondary filter-button">Год</button>
+                        <button type="button" class="btn btn-outline-secondary filter-button">Все</button>
+                        <button type="button" class="btn btn-outline-secondary mr-3">Интервал</button>
+                    </div>
+                    <div class="d-flex align-items-center filter-period">
+                        <span class="text-muted">с</span>
+                        <span class="date-link text-muted">Дата</span>
+                        <span class="text-muted">по</span>
+                        <span class="date-link text-muted">Дата</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-borderless">
+                <thead>
+                <tr class="border-bottom border-top">
+                    <th scope="col">№ операции</th>
+                    <th scope="col">Тип</th>
+                    <th scope="col">Категория</th>
+                    <th scope="col">Сумма</th>
+                    <th scope="col">Дата</th>
+                    <th scope="col">Комментарий</th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="border-bottom align-middle">
+                    <td class="align-middle">1</td>
+                    <td class="align-middle text-success">доход</td>
+                    <td class="align-middle">зарплата</td>
+                    <td class="align-middle">500$</td>
+                    <td class="align-middle">11.09.2022</td>
+                    <td></td>
+                    <td class="text-end align-middle">
+                        <a href="javascript:void(0)" class="text-dark me-2" data-bs-toggle="modal"
+                           data-bs-target="#deleteModal"><i class="bi bi-trash"></i></a>
+                        <a href="/transactions/edit" class="text-dark"><i class="bi bi-pencil"></i></a>
+                    </td>
+                </tr>
+                <tr class="border-bottom align-middle">
+                    <td class="align-middle">2</td>
+                    <td class="text-danger">расход</td>
+                    <td class="align-middle">жильё</td>
+                    <td class="align-middle">2 500$</td>
+                    <td class="align-middle">12.09.2022</td>
+                    <td></td>
+                    <td class="text-end align-middle">
+                        <a href="javascript:void(0)" class="text-dark me-2" data-bs-toggle="modal"
+                           data-bs-target="#deleteModal"><i class="bi bi-trash"></i></a>
+                        <a href="/transactions/edit" class="text-dark"><i class="bi bi-pencil"></i></a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>

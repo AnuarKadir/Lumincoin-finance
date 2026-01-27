@@ -1,0 +1,42 @@
+<div class="dashboard">
+    <div class="content-header mb-6">
+        <h1 class="title">Главная</h1>
+    </div>
+
+    <section class="content">
+            <div class="tab d-flex align-items-center justify-content-between flex-wrap">
+                <div class="btn-group" role="group" aria-label="Фильтр периода">
+                    <div class="d-flex  filter-group">
+                        <button type="button" class="btn btn-outline-secondary filter-button">Сегодня</button>
+                        <button type="button" class="btn btn-outline-secondary filter-button">Неделя</button>
+                        <button type="button" class="btn btn-outline-secondary filter-button">Месяц</button>
+                        <button type="button" class="btn btn-outline-secondary filter-button">Год</button>
+                        <button type="button" class="btn btn-outline-secondary filter-button">Все</button>
+                        <button type="button" class="btn btn-outline-secondary mr-3">Интервал</button>
+                    </div>
+                    <div class="d-flex align-items-center filter-period">
+                        <span class="text-muted">с</span>
+                        <span class="date-link text-muted">Дата</span>
+                        <span class="text-muted">по</span>
+                        <span class="date-link text-muted">Дата</span>
+                    </div>
+                </div>
+            </div>
+        <div class="charts-wrapper d-flex flex-wrap">
+            <div class="chart-card">
+                <h2 class="text-center second-title mb-3-5">Доходы</h2>
+                <div class="chart-container">
+                    <canvas id="incomeChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <h2 class="text-center second-title">Расходы</h2>
+                <div class="chart-container">
+                    <canvas id="expenseChart"></canvas>
+                </div>
+            </div>
+        </div>
+</section>
+
+</div>

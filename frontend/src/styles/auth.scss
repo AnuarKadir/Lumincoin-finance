@@ -1,0 +1,63 @@
+.login-logo {
+  line-height: 0;
+  margin-bottom: 60px;
+  img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.auth-title {
+  color: #052C65;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 47px;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 397px;
+  .input-group {
+    margin-bottom: 10px;
+    .input-group-text {
+      padding: 0;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #E9ECEF;
+
+    }
+    .form-control {
+      height: 38px;
+      padding: 7px 13px;
+      font-size: 15px;
+      font-weight: 400;
+    }
+  }
+  .auth-checkbox {
+    min-height: 23px;
+    margin-top: 0;
+    label[for="remember-me"] {
+      font-family: 'Roboto', sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      margin-left: 9px;
+      line-height: 23px;
+    }
+  }
+  .btn-auth {
+    padding: 10px 0;
+    line-height: 1;
+  }
+
+  .link {
+    font-size: 12px;
+    font-weight: 400;
+    a {
+      padding-left: 10px;
+    }
+  }
+}

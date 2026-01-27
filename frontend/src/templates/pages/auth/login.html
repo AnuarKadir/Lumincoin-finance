@@ -1,0 +1,35 @@
+<div class="d-flex justify-content-center align-items-center min-vh-100">
+    <div class="login-box">
+        <div class="login-logo text-center mb-6">
+            <img src="/images/Logo.png" class="auth-logo" alt="Lumincoin Logo"/>
+        </div>
+        <h5 class="text-center mb-3-5 auth-title ">Вход</h5>
+        <div id="common-error" class="error invalid-feedback text-center mb-3">Не правильный email или пароль
+        </div>
+        <form>
+            <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-envelope-open text-muted"></i></span>
+                <input type="email" class="form-control rounded-end" placeholder="Электронная почта" id="email">
+                <span id="email-error" class="error invalid-feedback">Введите корректный E-mail</span>
+            </div>
+            <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-lock text-muted"></i></span>
+                <input type="password" class="form-control  rounded-end" placeholder="Пароль" id="password">
+                <span id="password-error" class="error invalid-feedback">Заполните пароль</span>
+            </div>
+            <div class="col-12 auth-checkbox d-flex align-items-center mb-3-5">
+                <input type="checkbox" id="remember-me" class="form-check-input mt-0">
+                <label for="remember-me">
+                    Запомнить меня
+                </label>
+            </div>
+            <div class="mb-2-5">
+                <button type="button" class="btn btn-primary btn-block btn-auth w-100" id="process-button">Войти
+                </button>
+            </div>
+            <p class="link m-0">Еще нет аккаунта? <a href="/sign-up">
+                Пройдите регистрацию
+            </a></p>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+<div class="content-header mb-4-5">
+  <h1 class="title">Создание дохода/расхода</h1>
+</div>
+
+<section class="content">
+  <div class="row">
+    <div class="col-12 col-md-6 col-lg-4">
+
+      <form>
+        <div class="form-group">
+          <select class="form-control custom-input" required>
+            <option value="" disabled selected>Тип...</option>
+            <option value="income">Доход</option>
+            <option value="expense">Расход</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <select class="form-control custom-input" required>
+            <option value="" disabled selected>Категория...</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <input type="number" class="form-control custom-input" placeholder="Сумма в $..." required>
+        </div>
+
+        <div class="form-group">
+          <input type="date" class="form-control custom-input" placeholder="Дата..." required>
+        </div>
+
+        <div class="form-group mb-3-5">
+          <input type="text" class="form-control custom-input" placeholder="Комментарий...">
+        </div>
+
+        <div class="button-wrapper  d-flex">
+          <button type="submit" class="btn btn-success btn-custom">Создать</button>
+          <a href="/transactions" class="btn btn-danger btn-custom">Отмена</a>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</section>

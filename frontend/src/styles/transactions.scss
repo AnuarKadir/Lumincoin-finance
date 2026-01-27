@@ -1,0 +1,35 @@
+.table {
+  thead {
+    th {
+      color: #052C65;
+      padding: 15px;
+      vertical-align: middle;
+      text-align: center;
+      line-height: 19px;
+      font-size: 16px;
+      font-weight: 500;
+      &:nth-child(1) {
+        text-align: start;
+        width: 11%;
+      }
+    }
+  }
+  tbody {
+    td {
+      align-items: center;
+      padding: 13px 12px;
+      vertical-align: middle;
+      text-align: center;
+
+      &:nth-child(1) {
+        font-weight: 500;
+      }
+      &:nth-child(2) {
+        font-weight: 500;
+      }
+      &:last-child {
+        text-align: right;
+      }
+    }
+    }
+}

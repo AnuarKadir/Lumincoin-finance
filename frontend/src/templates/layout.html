@@ -1,0 +1,88 @@
+<div class="wrapper d-flex">
+    <div class="main-sidebar d-flex flex-column flex-shrink-0">
+        <div class="logo-wrapper">
+            <img src="/images/Logo.png" alt="Lumincoin Logo"/>
+        </div>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+                <a href="/" class="nav-link pe-0 d-flex  align-items-center" aria-current="page">
+                    <i class="bi bi-house"></i>
+                    Главная
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/transactions" class="nav-link pe-0 d-flex  align-items-center">
+                    <i class="bi bi-cash-coin"></i>
+                    Доходы & Расходы
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#categories-collapse"
+                   class="nav-link d-flex align-items-center"
+                   data-bs-toggle="collapse" aria-expanded="false">
+                    <span class="flex-grow-1">Категории</span>
+                    <i class="bi bi-chevron-right"></i>
+                </a>
+
+                <div class="collapse" id="categories-collapse">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small ">
+                        <li>
+                            <a href="/income" class="nav-link nav-link-highlight">Доходы</a>
+                        </li>
+                        <li>
+                            <a href="/expense" class="nav-link">Расходы</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+        </ul>
+        <div class="sidebar-footer mt-auto">
+            <div class="balance">
+                Баланс: <span>500$</span>
+            </div>
+            <div class="user-profile dropdown d-flex align-items-center">
+                <a href="javascript:void(0)"
+                   class="d-flex align-items-center link-dark text-decoration-none"
+                   id="dropdownUser"
+                   data-bs-toggle="dropdown"
+                   aria-expanded="false">
+
+                    <div class="avatar d-flex align-items-center justify-content-center me-3">
+                        <i class="bi bi-person"></i>
+                    </div>
+
+                    <div class="profile-name" id="profile-name">Roman Chernov</div>
+                </a>
+                <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser">
+                    <li><a class="dropdown-item rounded-2" href="/logout" id="logout-btn">Выйти</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="content-wrapper flex-grow-1" id="content-layout" style="min-height: 100vh;">
+    </div>
+</div>
+
+<div class="modal fade" id="deleteModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <h5 class="mb-3-5 modal-title" id="modal-question">
+                    Вы действительно хотите удалить операцию?
+                </h5>
+
+                <div class="d-flex justify-content-center gap-2">
+                    <button type="button" class="btn btn-success btn-custom" id="confirm-delete-btn">
+                        Да, удалить
+                    </button>
+                    <button type="button" class="btn btn-danger btn-custom" data-bs-dismiss="modal">
+                        Не удалять
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
