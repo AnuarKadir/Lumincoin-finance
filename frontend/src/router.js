@@ -215,6 +215,7 @@ export class Router {
                 if (newRoute.useLayout) {
                     this.contentPageElement.innerHTML = await fetch(newRoute.useLayout).then(response => response.text());
                     contentBlock = document.getElementById('content-layout');
+                    initSidebar();
                 }
                 contentBlock.innerHTML = await fetch(newRoute.filePathTemplate).then(response => response.text());
             }
@@ -228,5 +229,63 @@ export class Router {
             await this.activateRoute();
         }
         this.findElements(urlRoute);
+        function initSidebar() {
+            const burger = document.getElementById('burger-menu');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+
+            if (!burger || !sidebar || !overlay) return;
+
+            const closeMenu = () => {
+                sidebar.classList.remove('show');
+                overlay.classList.remove('show');
+                burger.classList.remove('active');
+                document.body.style.overflow = '';
+                burger.setAttribute('aria-expanded', 'false');
+            };
+
+            const openMenu = () => {
+                sidebar.classList.add('show');
+                overlay.classList.add('show');
+                burger.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                burger.setAttribute('aria-expanded', 'true');
+            };
+
+            burger.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (sidebar.classList.contains('show')) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            });
+
+            overlay.addEventListener('click', closeMenu);
+
+            const sidebarLinks = sidebar.querySelectorAll('.nav-link:not([data-bs-toggle="collapse"])');
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 991) {
+                        closeMenu();
+                    }
+                });
+            });
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => {
+                    if (window.innerWidth > 991 && sidebar.classList.contains('show')) {
+                        closeMenu();
+                    }
+                }, 250);
+            });
+
+            burger.setAttribute('aria-label', 'Открыть меню');
+            burger.setAttribute('aria-expanded', 'false');
+            sidebar.setAttribute('aria-label', 'Главное меню');
+            sidebar.setAttribute('role', 'navigation');
+
+        }
     }
 }
