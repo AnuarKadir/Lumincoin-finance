@@ -16,8 +16,7 @@ export  class SignUp {
             {element: this.lastNameElement, options: {pattern: /^[А-ЯЁ][а-яё\s-]+$/}},
             {element: this.emailElement, options: {pattern: /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/}},
             {element: this.passwordElement, options: {pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/}},
-            {element: this.passwordRepeatElement, options: {compareTo: this.passwordElement.value}},
-            {element: this.agreeElement, options: {checked: true}},
+            {element: this.passwordRepeatElement, options: {compareTo: this.passwordElement.value}}
         ];
         document.getElementById('process-button').addEventListener('click', this.signUp.bind(this));
     }
@@ -27,7 +26,6 @@ export  class SignUp {
         this.emailElement = document.getElementById('email');
         this.passwordElement = document.getElementById('password');
         this.passwordRepeatElement = document.getElementById('password-repeat');
-        this.agreeElement = document.getElementById('agree');
         this.commonErrorElement = document.getElementById('common-error');
     }
     async signUp() {
