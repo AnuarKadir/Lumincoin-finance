@@ -43,7 +43,6 @@ export class HttpUtils {
                 } else {
                     const updateTokenResult = await AuthUtils.updateRefreshToken();
                     if(updateTokenResult) {
-                        //запрос повторно
                         return this.request(url, method, useAuth, body);
                     } else {
                         result.redirect = '/login';

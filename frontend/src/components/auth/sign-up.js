@@ -15,8 +15,8 @@ export  class SignUp {
             {element: this.nameElement, options: {pattern: /^[А-ЯЁ][а-яё\s-]+$/}},
             {element: this.lastNameElement, options: {pattern: /^[А-ЯЁ][а-яё\s-]+$/}},
             {element: this.emailElement, options: {pattern: /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/}},
-            {element: this.passwordElement, options: {pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/}},
-            {element: this.passwordRepeatElement, options: {compareTo: this.passwordElement.value}}
+            {element: this.passwordElement, options: {pattern: /^(?=.*\d)(?=.*[A-Z]).{8,}$/}},
+            {element: this.passwordRepeatElement, options: {compareTo: ''}}
         ];
         document.getElementById('process-button').addEventListener('click', this.signUp.bind(this));
     }
@@ -36,6 +36,7 @@ export  class SignUp {
                 this.validations[i].options.compareTo = this.passwordElement.value;
             }
         }
+
         if (ValidationUtils.validateForm(this.validations)) {
 
             const signupResult = await AuthService.signUp({
@@ -43,14 +44,11 @@ export  class SignUp {
                 lastName: this.lastNameElement.value,
                 email: this.emailElement.value,
                 password: this.passwordElement.value,
+                passwordRepeat: this.passwordRepeatElement.value
             });
 
             if(signupResult) {
-                AuthUtils.setAuthInfo(signupResult.accessToken, signupResult.refreshToken, {
-                    id: signupResult.id,
-                    name: signupResult.name
-                })
-                return  this.openNewRoute('/');
+                return this.openNewRoute('/login');
             }
             this.commonErrorElement.style.display = "block";
         }

@@ -2,7 +2,7 @@ import {Dashboard} from "./components/dashboard";
 import {Login} from "./components/auth/login";
 import {SignUp} from "./components/auth/sign-up";
 import {Logout} from "./components/auth/logout";
-
+import {RouteUtils} from "./utils/route-utils";
 export class Router {
 
     constructor() {
@@ -182,6 +182,8 @@ export class Router {
     }
     async activateRoute(e, oldRoute) {
 
+
+
         if (oldRoute) {
             const currentRoute = this.routes.find(item => item.route === oldRoute);
             if (currentRoute.styles && currentRoute.styles.length > 0) {
@@ -196,6 +198,11 @@ export class Router {
 
         const urlRoute = window.location.pathname;
         const newRoute = this.routes.find(item => item.route === urlRoute);
+        const redirectRoute = RouteUtils.getRedirectRoute(urlRoute);
+        if (redirectRoute) {
+            history.pushState({}, '', redirectRoute);
+            return await this.activateRoute();
+        }
 
         if (newRoute) {
             if (newRoute.styles && newRoute.styles.length > 0) {

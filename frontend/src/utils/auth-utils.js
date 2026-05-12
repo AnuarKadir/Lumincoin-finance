@@ -55,4 +55,7 @@ export class AuthUtils {
         }
          return result;
     }
+    static isAuthenticated() {
+        return !!this.getAuthInfo(this.accessTokenKey);
+    }
 }
