@@ -19,12 +19,12 @@ export class ValidationUtils {
                 condition = element.value && element.value === options.compareTo
             } else if (options.hasOwnProperty('checkProperty')) {
                 condition = options.checkProperty;
-            }  else if (options.hasOwnProperty('checked')) {
+            } else if (options.hasOwnProperty('checked')) {
                 condition = element.checked;
             }
         }
 
-        if(condition) {
+        if (condition) {
             element.classList.remove('is-invalid');
             return true;
         } else {

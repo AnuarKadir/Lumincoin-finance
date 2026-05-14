@@ -8,15 +8,16 @@ export class Dashboard {
     }
 
     createPlaceholderCharts() {
-        const pieColors = ['   Red      ', ' Orange', ' Yellow', ' Green', ' Blue'];
+        const pieColors = ['red', 'orange', 'yellow', 'green', 'blue'];
         const commonOptions = {
             responsive: true,
             maintainAspectRatio: false,
-            radius: 180,
+            aspectRatio: 1,
+            radius: '90%',
             plugins: {
                 legend: {
                     position: 'top',
-                    align: 'start',
+                    align: 'center',
                     fullSize: true,
                     labels: {
                         usePointStyle: false,

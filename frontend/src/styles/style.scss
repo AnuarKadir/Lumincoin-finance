@@ -75,13 +75,14 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-weight: 500;
     line-height: 47px;
   }
+
   .btn-custom {
     padding: 11px 16px;
     border: 0;
     font-size: 14px;
     font-weight: 500;
     line-height: 16px;
-
+    flex: 0 1 auto;
     &:not(:last-child) {
       margin-right: 10px;
     }
@@ -89,10 +90,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
   .tab {
     margin-bottom: 140px;
-
     .filter-group {
-      margin-right: 20px;
-
       .filter-button {
         width: 100px;
         margin-right: 20px;
@@ -110,29 +108,170 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
       span:nth-child(1) {
         margin-right: 20px;
       }
-
       span:nth-child(2) {
         margin-right: 27px;
       }
-
       span:nth-child(3) {
         margin-right: 17px;
       }
-
       span:nth-child(4) {
         margin-right: 0;
-
       }
+
 
       .date-link {
         color: #0d6efd;
         cursor: pointer;
         font-weight: 500;
-        border-bottom: 1px #6C757D;
+        border-bottom: 1px solid #6C757D;
       }
     }
   }
 }
+
+
+
+@media (max-width: 991px) {
+  .content-wrapper {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 0 !important;
+    padding: 80px 30px 30px;
+    .filter-group {
+      margin-bottom: 20px;
+    }
+    .filter-period {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    padding: 70px 20px 20px;
+
+    .title {
+      font-size: 32px;
+      line-height: 38px;
+    }
+
+    .tab {
+        margin-bottom: 80px;
+      .filter-group {
+
+        .filter-button {
+          width: 80px;
+          font-size: 14px;
+          padding: 8px 0;
+        }
+      }
+
+      .filter-period {
+        font-size: 14px;
+
+        span:nth-child(1),
+        span:nth-child(2),
+        span:nth-child(3) {
+          margin-right: 15px;
+        }
+      }
+    }
+
+    .btn-custom {
+      padding: 9px 14px;
+      font-size: 13px;
+      &:not(:last-child) {
+        margin-right: 8px !important;
+      }
+    }
+  }
+
+  .second-title {
+    font-size: 24px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .content-wrapper {
+    padding: 60px 15px 15px;
+    .title {
+      font-size: 28px !important;
+      line-height: 34px !important;
+    }
+    .tab {
+      margin-bottom: 40px !important;
+      .filter-group {
+        flex-wrap: wrap;
+        margin-right: 0;
+        width: 100%;
+        margin-bottom: 10px;
+        .filter-button {
+          width: calc(33.33% - 0.67rem);
+          margin-right: 10px;
+          margin-bottom: 10px;
+          font-size: 13px;
+          padding: 9px 5px;
+
+        }
+      }
+
+      .filter-period {
+        flex-wrap: wrap;
+        font-size: 13px;
+
+        span {
+          margin-bottom: 10px;
+
+          &:nth-child(1),
+          &:nth-child(2),
+          &:nth-child(3),
+          &:nth-child(4) {
+            margin-right: 10px !important;
+          }
+        }
+      }
+    }
+
+    .btn-custom {
+      padding: 8px 12px !important;
+      font-size: 12px !important;
+      margin-bottom: 8px;
+    }
+  }
+
+  .second-title {
+    font-size: 20px !important;
+  }
+
+  .custom-input {
+    padding: 6px 14px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 375px) {
+  .content-wrapper {
+    .title {
+      font-size: 24px !important;
+      line-height: 30px !important;
+    }
+
+    .tab {
+      .filter-group {
+        .filter-button {
+          width: calc(50% - 0.67rem);
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .second-title {
+    font-size: 18px !important;
+  }
+}
+
+
 
 
 
